@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Sentiment Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+</head>
+<body>
+    <header>
+        <h1>Subreddit Stock Sentiment Analysis for S&P 500 Tickers</h1>
+    </header>
+    <section class="instructions">
+        <p>Use this tool to analyze stock sentiment from various subreddits. Adjust the minimum sentiment, maximum sentiment, date range, and number of posts to filter the data. The sentiment values range from -1 (very negative) to 1 (very positive).</p>
+    </section>
+    <div class="controls">
+        <div class="control-group">
+            <label for="minSentiment">Minimum Sentiment:</label>
+            <input type="number" id="minSentiment" step="0.1" value="-1" min="-1" max="1">
+        </div>
+        <div class="control-group">
+            <label for="maxSentiment">Maximum Sentiment:</label>
+            <input type="number" id="maxSentiment" step="0.1" value="1" min="-1" max="1">
+        </div>
+        <div class="control-group">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate">
+        </div>
+        <div class="control-group">
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate">
+        </div>
+        <div class="control-group">
+            <label for="numPosts">Number of Posts:</label>
+            <input type="number" id="numPosts" value="100" min="1">
+        </div>
+        <div class="control-group">
+            <label for="sortOption">Sort by Score:</label>
+            <select id="sortOption">
+                <option value="desc">High to Low</option>
+                <option value="asc">Low to High</option>
+            </select>
+        </div>
+        <div class="control-group button-group">
+            <button onclick="fetchData()">Fetch Data</button>
+        </div>
+    </div>
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+    </div>
+    <table id="tickerTable">
+        <thead>
+            <tr>
+                <th data-tippy-content="The date the post was created">Date</th>
+                <th data-tippy-content="The stock ticker symbol">Ticker</th>
+                <th data-tippy-content="The subreddit from which the post was fetched">Subreddit</th>
+                <th data-tippy-content="The sentiment score of the post's title">Title Sentiment</th>
+                <th data-tippy-content="The sentiment score of the post's body">Body Sentiment</th>
+                <th data-tippy-content="The average sentiment score of the post, excluding zeros">Average Sentiment</th>
+                <th data-tippy-content="The score (upvotes - downvotes) of the post">Score</th>
+                <th data-tippy-content="See Post Details">View Post</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <footer>
+        <p>Made by <a href="https://oliviamccarty.github.io/" target="_blank">Olivia McCarty</a></p>
+    </footer>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

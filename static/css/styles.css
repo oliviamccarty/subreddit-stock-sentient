@@ -1,0 +1,176 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+}
+.instructions {
+    margin-bottom: 20px;
+    max-width: 600px;
+    text-align: center;
+    color: #555;
+}
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.controls label {
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #333;
+}
+.controls input, .controls select, .controls button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+.controls button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+.controls button:hover {
+    background-color: #0056b3;
+}
+.button-group {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.loading {
+    display: none; /* Hide the loading spinner by default */
+    margin-bottom: 20px;
+}
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 123, 255, 0.2);
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    max-width: 1000px;
+}
+table, th, td {
+    border: 1px solid #ccc;
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #555;
+}
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+/* Styling for ticker links */
+.ticker-link {
+    color: black;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.ticker-link:visited {
+    color: black;
+}
+
+/* Styling for sentiments */
+.positive-sentiment {
+    color: green;
+}
+.negative-sentiment {
+    color: red;
+}
+.neutral-sentiment {
+    color: black;
+}
+
+/* Styling for post details */
+.post-details-row {
+    background-color: #f9f9f9;
+}
+.post-details {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+.post-details strong {
+    display: block;
+    margin-bottom: 5px;
+}
+.post-body {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.original-post-link {
+    color: blue;
+    text-decoration: underline;
+}
+.original-post-link:visited {
+    color: blue;
+}
+
+/* Styling for view post button */
+.view-post-btn {
+    padding: 5px 10px;
+    background-color: #d3d3d3; /* Light gray color */
+    color: #333; /* Darker text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+.view-post-btn:hover {
+    background-color: #b0b0b0; /* Slightly darker gray on hover */
+}
+.view-post-btn::after {
+    content: '';
+    margin-left: 5px;
+}
