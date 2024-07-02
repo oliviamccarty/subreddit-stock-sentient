@@ -1,5 +1,7 @@
 # Subreddit Stock Sentiment Analyzer
 
+[Visit the deployed application](https://subreddit-stock-sentient.onrender.com)
+
 This project analyzes stock sentiment from various subreddits and provides insights into the sentiment around S&P 500 tickers. The web application allows users to filter sentiment data based on various criteria and view detailed information about each post.
 
 ## Features
